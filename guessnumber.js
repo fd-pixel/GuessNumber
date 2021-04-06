@@ -2,7 +2,7 @@ const button1 = document.getElementById("btn1");
 const tahmin = document.getElementById("number");
 const mesaj = document.getElementById("message");
 const mesaj2 = document.getElementById("message2");
-let r = Math.trunc(Math.random() * 101);
+let r = Math.trunc(Math.random() * 100);
 
 // console.log(tahmin);
 // console.log(typeof(tahmin.value));
@@ -30,13 +30,15 @@ function guess() {
       button1.disabled = true;
   }
     }
-    counter--;
-  }
-  if (parseInt(tahmin.value) != r && counter == 0) {
+    counter--
+    
+if (parseInt(tahmin.value) != r && counter === 0) {
     mesaj.textContent = "Sorry. No attempts left.";
     mesaj2.textContent = "You lose the game";
     button1.disabled = true;
   }
+  
+}
 
 
 
