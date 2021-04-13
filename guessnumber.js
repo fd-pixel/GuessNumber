@@ -38,14 +38,13 @@ function guess() {
     } else if (parseInt(tahmin.value) === r) {
       mesaj.textContent = "Congrats";
       mesaj2.textContent = `You have found the number ${r} at your ${
-        6 - counter
-      }. attempt`;
-      setTimeout(again, 100);
+        6 - counter}. attempt`;
+        setTimeout(again,100);
     }
   }
   
   //reset(tahmin.value)
-  mesaj3.textContent += `your ${6 - counter}. attempt is ${tahmin.value}\n`;
+  mesaj3.textContent += `your ${6 - counter}. attempt is ${tahmin.value}`;
   tahmin.value = "";
   counter--;
   
@@ -53,7 +52,7 @@ function guess() {
     mesaj.textContent = "Sorry. No attempts left.";
     mesaj2.textContent = "You lose the game";
 
-    setTimeout(again, 100);
+    setTimeout(again,100);
   }
 }
 function again() {
@@ -73,6 +72,7 @@ function again() {
     tahmin.disabled=true;
   }
 }
+
 //let nextgame = confirm("again?");
 // if ((nextgame = true)) {
 //   guess();
