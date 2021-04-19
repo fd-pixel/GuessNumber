@@ -8,7 +8,7 @@ let r = Math.trunc(Math.random() * 100);
 // console.log(tahmin);
 // console.log(typeof(tahmin.value));
 // console.log(typeof(parseInt(tahmin.value)));
-
+tahmin.focus();
 button1.addEventListener("click", guess);
 tahmin.addEventListener("keyup", function (event) {
   if (event.code == "Enter") {
@@ -67,14 +67,15 @@ function again() {
   mesaj.style.visibility = "hidden";
   mesaj2.style.visibility = "visible";
   mesaj3.style.visibility = "hidden";
-  if ((nextGame = true)) {
+  if (nextGame == true) {
     r = Math.trunc(Math.random() * 100);
-    counter = 6;
+    counter = 5;
     mesaj.textContent = "";
-    mesaj2.textContent = `You have ${counter - 1} attempts left`;
+    mesaj2.textContent = `You have ${counter} attempts`;
     mesaj3.textContent = "";
-    return (counter = 5);
-  } else if (nextGame = false) {
+    tahmin.focus();
+    
+  } else if (nextGame == false) {
     button1.disabled = true;
     tahmin.disabled = true;
     mesaj2.textContent = "Thanx for playing!!!";
