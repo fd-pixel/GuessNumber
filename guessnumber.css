@@ -1,22 +1,24 @@
 /* *{
   border: 1px solid;
 } */
+body{
+  box-sizing: border-box;
+}
 .container {
-    height: 50vh;
+    min-height: 60vh;
     width: 70%;
     background: linear-gradient(to bottom left, #816233, #b6bdac);
     ;
     border-radius:10px;
     padding-right: 1rem;
+    padding-bottom: 1rem;
   }
   .main{
     margin: 2em auto;
     display: flex;
     justify-content: center;
   }
-  .content {
-
-  }
+ 
 .messages{
   text-align: center;
   display: flex;

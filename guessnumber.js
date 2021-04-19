@@ -16,16 +16,20 @@ tahmin.addEventListener("keyup", function (event) {
   }
 });
 
-// });
 let counter = 5;
 function guess() {
   if (counter > 0) {
-    
     mesaj.style.visibility = "visible";
     mesaj2.style.visibility = "visible";
     mesaj3.style.visibility = "visible";
-    if (parseInt(tahmin.value) > 100) {
-      mesaj.textContent = "The number should be smaller than 100";
+    if (parseInt(tahmin.value) > 100 || parseInt(tahmin.value) < 0) {
+      mesaj.textContent = "The number should be between 1 and  100";
+      mesaj2.textContent = `You have ${counter - 1} attempts left`;
+    } else if (
+      tahmin.value.includes(",") == true ||
+      tahmin.value.includes(".") == true
+    ) {
+      mesaj.textContent = "Pls Enter a natural number";
       mesaj2.textContent = `You have ${counter - 1} attempts left`;
     } else if (parseInt(tahmin.value) < r) {
       mesaj.innerHTML = "Please Up";
@@ -38,44 +42,43 @@ function guess() {
     } else if (parseInt(tahmin.value) === r) {
       mesaj.textContent = "Congrats";
       mesaj2.textContent = `You have found the number ${r} at your ${
-        6 - counter}. attempt`;
-        setTimeout(again,100);
+        6 - counter
+      }. attempt`;
+      setTimeout(again, 100);
     }
   }
-  
+
   //reset(tahmin.value)
-  mesaj3.textContent += `your ${6 - counter}. attempt is ${tahmin.value}`;
+  mesaj3.innerHTML += `Your ${6 - counter}. attempt is ${tahmin.value} <br>`;
+  mesaj3.style.marginBottom = "20px";
   tahmin.value = "";
+  tahmin.focus();
   counter--;
-  
+
   if (parseInt(tahmin.value) != r && counter === 0) {
     mesaj.textContent = "Sorry. No attempts left.";
     mesaj2.textContent = "You lose the game";
 
-    setTimeout(again,100);
+    setTimeout(again, 100);
   }
 }
 function again() {
   let nextGame = confirm("Again?");
-    mesaj.style.visibility = "hidden";
-    mesaj2.style.visibility = "visible";
-    mesaj3.style.visibility = "hidden";
-  if (nextGame = true) {
+  mesaj.style.visibility = "hidden";
+  mesaj2.style.visibility = "visible";
+  mesaj3.style.visibility = "hidden";
+  if ((nextGame = true)) {
     r = Math.trunc(Math.random() * 100);
-    counter=6;
+    counter = 6;
     mesaj.textContent = "";
     mesaj2.textContent = `You have ${counter - 1} attempts left`;
     mesaj3.textContent = "";
-    return (counter = 5)
+    return (counter = 5);
   } else if (nextGame = false) {
     button1.disabled = true;
-    tahmin.disabled=true;
+    tahmin.disabled = true;
+    mesaj2.textContent = "Thanx for playing!!!";
+    
   }
 }
 
-//let nextgame = confirm("again?");
-// if ((nextgame = true)) {
-//   guess();
-// } else {
-//   button1.disabled = true;
-// }
