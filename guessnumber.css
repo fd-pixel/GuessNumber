@@ -73,9 +73,9 @@
 }
 
 input {
-  border-radius: 5px;
+  border-radius: 0.4em;
   height: 3rem;
-  max-width: 10rem;
+  width: 8em;
   background-color: rgb(255, 255, 255);
   margin: 0 0.5em;
   text-align: center;
@@ -111,4 +111,17 @@ body {
   padding: 0 0.2em;
   display: flex;
   justify-content: center;
+}
+@media screen and (max-width: 768px) {
+  /* html {
+    font-size: 10px;
+  }
+  body {
+    background-image: url(https://picsum.photos/200/300);
+    color: white;
+  }
+  span {
+    color: unset;
+  } */
+
 }
